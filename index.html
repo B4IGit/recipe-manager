@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recipe Site</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <script src="assets/js/createRecipes.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</head>
+<body onload="pageSetup()">
+
+    <header class="header">
+        <a href="#" class="logo">Recipes Site</a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="recipe.html">Recipes</a>
+        </nav>
+        <button class="btn">Login</button>
+    </header>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h5>Most Popular</h5>
+            <h2>Italian Roasted Vegetable Rice Bowl</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis euismod lectus. Curabitur laoreet felis a nibh bibendum, vitae faucibus lorem sagittis. Nunc sollicitudin diam ac magna consequat, vel placerat ligula vestibulum. Quisque vel pulvinar ipsum, at convallis orci. Vestibulum aliquet, urna et pulvinar.</p>
+            <button class="btn hero-btn">View Recipe</button>
+        </div>
+        <div class="hero-image">
+            <img src="assets/media/carrot-bocc.jpg" alt="#">
+        </div>
+    </section>
+    <section id="allRecipes">
+        <h1>The Latest & Greatest</h1>
+            <div class="display-recipes">
+                <template id="recipe-template">
+                    <div class="prevRecipe">
+                        <div class="left">
+                            <img src="assets/media/carrot-bocc.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <h3>Fried Chicken</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec urna tellus, maximus quis leo id, pharetra iaculis purus. Cras consectetur lacus in magna pulvinar fringilla. Pellentesque accumsan nisi ut hendrerit.</p>
+
+                            <button>View Recipe</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        <div class="recipes-div" id="display-whole-recipe">
+            <template id="whole-recipe-template">
+                <div class="recipes-div" id="displayFullRecipe">
+                    <div class="card" id="recipe-card">
+                        <div class="left">
+                            <img src="assets/media/carrot-bocc.jpg" alt="" class="image" id="recipe-img">
+                            <button class="close btn" id="closeBtn">Close</button>
+                            <h3>Servings: <span></span></h3>
+                            <button class="half-recipe">.5X</button>
+                            <button class="reg-recipe">1X</button>
+                            <button class="dbl-recipe">2X</button>
+                        </div>
+                        <div class="right">
+                            <h2 class="name" id="recipe-name">Fried Chicken</h2>
+                            <div class="desc" id="recipe-description">
+                                <p>description</p>
+                                <div class="flex">
+                                    <h4>Prep Time: <span id="prep-time"></span> <span>mins</span></h4>
+                                    <h4>Difficulty: <span style="text-transform: uppercase" id="difficulty"></span></h4>
+                                </div>
+                            </div>
+                            <div class="ingredientsBtn" id="showIngredientsBtn">+ Ingredients
+                                <div class="ingredients content" style="display: none;">
+                                </div>
+                            </div>
+                            <div class="instructionsBtn" id="showInstructionsBtn">+ Instructions
+                                <div class="instructions content" style="display: none;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
+
+<!--    <section class="recipes">
+            <div class="flex-columns">
+                <div class="recipes-div" id="display-whole-recipe">
+                    <template id="whole-recipe-template">
+                        <div class="recipes-div" id="displayFullRecipe">
+                            <div class="card" id="recipe-card">
+                                <div class="left">
+                                    <img src="assets/media/carrot-bocc.jpg" alt="" class="imgage" id="recipe-img">
+                                    <button class="close btn" id="closeBtn">Close</button>
+                                    <h3>Servings: <span></span></h3>
+                                    <button>.5X</button>
+                                    <button>1X</button>
+                                    <button>2X</button>
+                                </div>
+                                <div class="right">
+                                    <h2 class="name" id="recipe-name">Fried Chicken</h2>
+                                    <div class="desc" id="recipe-description">
+                                        <p>description</p>
+                                        <div class="flex">
+                                            <h4>Prep Time: <span id="prep-time"></span> <span>mins</span></h4>
+                                            <h4>Difficulty: <span style="text-transform: uppercase" id="difficulty"></span></h4>
+                                        </div>
+                                    </div>
+                                    <div class="ingredientsBtn" id="showIngredientsBtn">+ Ingredients
+                                        <div class="ingredients content" style="display: none;">
+                                        </div>
+                                    </div>
+                                    <div class="instructionsBtn" id="showInstructionsBtn">+ Instructions
+                                        <div class="instructions content" style="display: none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+    </section>-->
+
+
+<footer>
+    <div>
+        Academic Project
+    </div>
+</footer>
+
+</body>
+</html>
