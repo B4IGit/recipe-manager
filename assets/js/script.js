@@ -1,3 +1,24 @@
+//  *
+//  *
+//  *
+//  TODO:
+//  when view btn is clicked, show ALL recipe data from local storage
+//  (remove hard coded elements - to focus on the form data)
+//  serving sizes need to be updated when btns are clicked
+//  *
+//  *
+//  *
+//  RESUME:
+//  passing the data through the whole recipe template the view recipe btn is clicked
+//  update the array so it passes unlimited recipes
+//  *
+//  *
+//  *
+//  Problems:
+//  array is accepting ONLY 1 @ a time
+//  *
+//  *
+//  *
 
 const retrieveRecipes = localStorage.getItem('recipe');
 const recipeObject = JSON.parse(retrieveRecipes);
@@ -6,7 +27,12 @@ const retrieveWholeRecipe = localStorage.getItem('wholeRecipe');
 const wholeRecipeObject = JSON.parse(retrieveWholeRecipe);
 
     function pageSetup() {
-        recipeObject.forEach(card => {
+
+
+        //
+        //
+        // Displays recipes that are hard-coded
+      recipeObject.forEach(card => {
             const recipeTemplate = document.getElementById('recipe-template');
             const cloneRecipeCard = recipeTemplate.content.cloneNode(true);
 
@@ -17,7 +43,34 @@ const wholeRecipeObject = JSON.parse(retrieveWholeRecipe);
             document.querySelector('.display-recipes').appendChild(cloneRecipeCard);
         })
 
+        //
+        //
+        // Displays recipe that was entered from the form
+        let storedRecipes = JSON.parse(localStorage.getItem('recipes'));
+        console.log(storedRecipes);
 
+        // Get a reference to the template and the container
+        const template = document.getElementById('recipe-template');
+        const container = document.querySelector('.display-recipes');
+
+        // For each recipe in the stored array
+        storedRecipes.forEach(recipe => {
+            // Clone the template content
+            let clone = template.content.cloneNode(true);
+
+            // Populate the clone with data from the current recipe
+            clone.querySelector('img').src = recipe.image;
+            clone.querySelector('h3').textContent = recipe.name;
+            clone.querySelector('p').textContent = recipe.description;
+
+            // Append the populated clone to the container
+            container.appendChild(clone);
+        });
+
+
+        //
+        //
+        // Display all the recipe information (hard-coded)
         const buttons = document.querySelectorAll('.prevRecipe button');
 
         const handleCloseBtn = function () {

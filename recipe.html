@@ -6,8 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Recipe Site</title>
-    <link rel="stylesheet" href="assets/styles/main.css">
-    <script src="assets/js/script.js"></script>
+    <link rel="stylesheet" href="assets/styles/addRecipe.css">
+    <script src="assets/js/addRecipe.js"></script>
 </head>
 <body onload="pageSetup()">
 
@@ -24,42 +24,92 @@
     <section class="recipes">
         <h1>Add your own recipe</h1>
 
-                    <form id="ingredientForm">
-                        <label for="name">Recipe Name:</label><br>
-                        <input type="text" id="name" name="recipe-name"><br>
+        <form id="ingredientForm">
+            <label for="name">Recipe Name:</label><br>
+            <input type="text" id="name" name="recipe-name"><br>
 
-                        <label for="recipe-image">Recipe Image:</label><br>
-                        <input type="file" id="recipe-image" name="recipe-image"><br>
+            <label for="serving">Servings:</label><br>
+            <input type="number" id="serving" name="serving"> <br>
 
-                        <label for="description">Description:</label><br>
-                        <textarea id="description" name="recipe-description"></textarea><br>
+            <label for="recipe-image">Recipe Image:</label><br>
+            <input type="file" id="recipe-image" name="recipe-image"><br>
 
-                        <label for="prep-time">Preparation Time:</label><br>
-                        <input type="text" id="prep-time" name="recipe-prep-time"><br>
-
-                        <label for="difficulty">Difficulty Level:</label><br>
-                        <select id="difficulty" name="recipe-difficulty">
-                            <option value="Easy">Easy</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Hard">Hard</option>
-                        </select><br>
-
-                        <label for="ingredient">Ingredient:</label><br>
-                        <input type="text" id="ingredient" class="ingredient" name="ingredient"><br>
-
-                        <div id="ingredient-container"></div> <!-- Container for dynamic ingredient inputs -->
-
-                        <button type="button" id="add-ingredient">+ add ingredient</button>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="recipe-description"></textarea><br>
 
 
-                        <label for="instructions">Instructions:</label><br>
-                        <textarea id="instructions" name="recipe-instructions"></textarea><br>
+           <fieldset>
+               <legend>Prep Time:</legend>
+               <br>
+               <label for="hours">Hours:</label><br>
+               <input type="number" id="hours" name="hours" min="0" max="23"><br>
 
-                        <button type="submit" value="Submit Recipe">Add Recipe</button>
-                    </form>
+               <label for="minutes">Minutes:</label><br>
+               <input type="number" id="minutes" name="minutes" min="0" max="59"> <br>
 
+               <label for="difficulty">Difficulty Level:</label><br>
+               <select id="difficulty" name="recipe-difficulty">
+                   <option value="Easy">Easy</option>
+                   <option value="Medium">Medium</option>
+                   <option value="Hard">Hard</option>
+               </select><br>
+           </fieldset>
+
+            <div class="add-ingredient-div">
+                <template id="add-ingredient-template" class="ingredient-template">
+                    <label for="ingredient">Ingredient:</label><br>
+                    <input type="text" id="ingredient" class="ingredient" name="ingredient"><br>
+
+                    <label for="quanity">Quantity:</label><br>
+                    <input type="number" id="quanity" name="quanity"> <br>
+
+                    <label for="measurement">Choose Measurement</label><br>
+                    <select name="measurement" id="measurement">
+                        <option value="">Select Measurement</option>
+                        <option value="tsp">Teaspoon</option>
+                        <option value="tbsp">Tablespoon</option>
+                        <option value="floz">Fluid Ounce</option>
+                        <option value="cup">Cup</option>
+                    </select><br>
+                </template>
+                <fieldset>
+                    <legend>Add Ingredients:</legend>
+                    <br>
+                    <label for="ingredient">Ingredient:</label><br>
+                    <input type="text" id="ingredient" class="ingredient" name="ingredient"><br>
+
+                    <label for="quanity">Quantity:</label><br>
+                    <input type="number" id="quanity" name="quanity"> <br>
+
+                    <label for="measurement">Choose Measurement</label><br>
+                    <select name="measurement" id="measurement">
+                        <option value="">Select Measurement</option>
+                        <option value="tsp">Teaspoon</option>
+                        <option value="tbsp">Tablespoon</option>
+                        <option value="floz">Fluid Ounce</option>
+                        <option value="cup">Cup</option>
+                    </select><br>
+                    <div id="ingredient-container"></div>
+                    <button type="button" id="add-ingredient">+ add ingredient</button><br>
+                </fieldset>
+            </div>
+
+            <div class="add-instruction-div">
+                <template id="add-instruction-template">
+                    <label for="instructions">Instruction:</label><br>
+                    <textarea id="instructions" name="recipe-instructions"></textarea><br>
+                </template>
+                <fieldset>
+                    <legend>Add Each Instruction - (one per line)</legend>
+                    <br>
+                    <label for="instructions">Instruction:</label><br>
+                    <textarea id="instructions" name="recipe-instructions"></textarea><br>
+                    <div id="instructions-container"></div>
+                    <button type="button" id="add-instruction">+ add instruction</button><br>
+                </fieldset>
+            </div>
+            <button type="submit" value="Submit Recipe" class="submitBtn">Add Recipe</button>
+        </form>
     </section>
-
-<script type="module" src="assets/js/script.js"></script>
 </body>
 </html>

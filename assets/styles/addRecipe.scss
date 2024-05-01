@@ -1,0 +1,72 @@
+@import url(main.css);
+
+/* colors */
+$accent: #DE7047;
+$primary: #FFDE8D;
+$secondary: #eae6e6;
+$l-green: #CDDE47;
+$d-green: #528540;
+$text: #000;
+
+//  Breakpoints
+$xs-breakpoint: 0px;
+$sm-breakpoint: 576px;
+$md-breakpoint: 768px;
+$lg-breakpoint: 992px;
+$xl-breakpoint: 1200px;
+$xxl-breakpoint: 1400px;
+
+section.recipes {
+  position: relative;
+  padding: 1rem;
+  top: 100px;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    margin: 2rem 0;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    input[type=text],
+    input[type=number],
+    textarea, select {
+      height: 3rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    button {
+      height: 3rem;
+      background-color: $l-green;
+      border: none;
+      outline: none;
+    }
+    fieldset {
+      padding: 1rem;
+      margin-bottom: 2rem;
+      legend {
+        padding: 0 1rem;
+      }
+      input[type=text],
+      input[type=number],
+      textarea, select {
+        width: 100%;
+        height: 3rem;
+        margin: 0.5rem 0;
+      }
+      button {
+        width: 100%;
+      }
+      #add-ingredient-template, #ingredient-container {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

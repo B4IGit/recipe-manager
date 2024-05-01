@@ -1,12 +1,14 @@
 
-//  preview card
+//  Preview card
 const recipe = (recipeImg, recipeTitle, recipeDesc) => ({recipeImg,  recipeTitle, recipeDesc});
 
+// Saved images
 const recipeImage = {
     recipe1: 'assets/media/275576-easy-air-fryer-pork-chops-DDMFS-4x3-b2d7316498cd4d25901f403958754d31.webp',
     recipe2: 'assets/media/238691-Simple-Macaroni-And-Cheese-mfs_006-f7f521c65f894aef85e17bc9125c2c4a.jpg',
     recipe3: 'assets/media/7638600-fbf9ba8915004a738bc7fd4564228cae.webp'
 };
+// Sets recipe name
 const recipeName = {
     recipe1: 'Air Fryer Pork Chops',
     recipe2: 'Macaroni and Cheese',
@@ -155,5 +157,7 @@ localStorage.setItem('recipe', jsonRecipes);
 
 const jsonWholeRecipe = JSON.stringify(displayWholeRecipe);
 localStorage.setItem('wholeRecipe', jsonWholeRecipe);
+
+
 
 

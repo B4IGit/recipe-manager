@@ -17,8 +17,7 @@ function handleRecipeDisplay(index, servingSizeMultiplier) {
     displayRecipe(recipe, servingSizeMultiplier);
 }
 
-buttons.forEach(function (button, index) { //This is the start of the forEach loop containing your code
-    //existing template cloning code here..
+buttons.forEach(function (button, index) {
 
     cloneWholeRecipeCard.querySelector('.half-recipe').addEventListener('click', function () {
         handleRecipeDisplay(index, 0.5); // Run display function for half servings
@@ -32,5 +31,5 @@ buttons.forEach(function (button, index) { //This is the start of the forEach lo
         handleRecipeDisplay(index, 2); // Run display function for double servings
     });
 
-    //existing template cloning code
+
 });
